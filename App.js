@@ -1,5 +1,5 @@
 import React, { useState } from 'react';
-import { StyleSheet, View, FlatList, Alert, TouchableWithoutFeedback, Keyboard } from 'react-native';
+import { StatusBar, StyleSheet, View, FlatList, Alert, TouchableWithoutFeedback, Keyboard } from 'react-native';
 import Header from './components/header';
 import TodoItem from './components/todoItem';
 import AddTodo from './components/addTodo';
@@ -31,7 +31,7 @@ export default function App() {
         {text: 'Understood', onPress: () => console.log('alert closed') }
       ]);
     }
-    if((text.length < 3)) {
+    if((text.length <= 3)) {
       Alert.alert('OOPS', 'Todo must be more than 3 characters', [
         {text: 'Understood', onPress: () => console.log('alert closed') }
       ]);
@@ -44,6 +44,7 @@ export default function App() {
       console.log('dismissed');
     }}>
       <View style={styles.container}>
+      <StatusBar backgroundColor="coral" barStyle='light-content' />
         <Header />
         <View style={styles.content}>
           <AddTodo submitHandler={submitHandler} />
@@ -67,11 +68,11 @@ const styles = StyleSheet.create({
     backgroundColor: '#fff',
   },
   content: {
-    padding: 40,
+    padding: 16,
     flex: 1,
   },
   list: {
-    marginTop: 20,
+    marginTop: 5,
     flex: 1,
   },
 });

@@ -17,7 +17,9 @@ export default function AddTodo({ submitHandler }) {
     <View>
       <TextInput 
         style={styles.input} 
-        placeholder='new todo...'
+        selectionColor={'coral'}
+        placeholder='New todo...'
+        placeholderTextColor="#fff"
         onChangeText={changeHandler} 
         value={text} 
       />
@@ -28,10 +30,13 @@ export default function AddTodo({ submitHandler }) {
 
 const styles = StyleSheet.create({
   input: {
+    borderRadius: 35,
+    backgroundColor: '#ffc7c3',
+    height: 35,
+    fontSize: 20,
+    padding: 5,
+    color: 'white',
+    paddingLeft: 10,
     marginBottom: 10,
-    paddingHorizontal: 8,
-    paddingVertical: 6,
-    borderBottomWidth: 1,
-    borderBottomColor: '#ddd',
   },
 });
