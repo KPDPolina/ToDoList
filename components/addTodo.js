@@ -1,5 +1,6 @@
 import React, { useState } from 'react';
 import { StyleSheet, View, TextInput, Button } from 'react-native';
+TextInput.defaultProps.selectionColor = 'coral' 
 
 export default function AddTodo({ submitHandler }) {
   [text, setText] = useState('');
@@ -17,7 +18,6 @@ export default function AddTodo({ submitHandler }) {
     <View>
       <TextInput 
         style={styles.input} 
-        selectionColor={'coral'}
         placeholder='New todo...'
         placeholderTextColor="#fff"
         onChangeText={changeHandler} 
