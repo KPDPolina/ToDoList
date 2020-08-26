@@ -1,5 +1,5 @@
 import React, { useState } from 'react';
-import { StyleSheet, View, TextInput, Button } from 'react-native';
+import { StyleSheet, View, TextInput, Button, Keyboard } from 'react-native';
 TextInput.defaultProps.selectionColor = 'coral' 
 
 export default function AddTodo({ submitHandler }) {
@@ -12,6 +12,7 @@ export default function AddTodo({ submitHandler }) {
   const pressHandler = () => {
     submitHandler(text);
     setText('');
+    Keyboard.dismiss();
   }
 
   return (
